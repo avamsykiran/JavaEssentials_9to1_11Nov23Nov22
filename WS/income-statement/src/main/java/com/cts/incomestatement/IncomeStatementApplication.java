@@ -1,10 +1,12 @@
 package com.cts.incomestatement;
 
+import com.cts.incomestatement.uis.StatementUI;
+
 public class IncomeStatementApplication {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		StatementUI ui = new StatementUI();
+		ui.run();
 	}
 
 }
