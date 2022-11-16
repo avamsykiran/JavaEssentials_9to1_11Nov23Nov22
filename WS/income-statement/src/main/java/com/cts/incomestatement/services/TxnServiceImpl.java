@@ -3,6 +3,8 @@ package com.cts.incomestatement.services;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.cts.incomestatement.daos.TxnDao;
 import com.cts.incomestatement.daos.TxnDaoImpl;
 import com.cts.incomestatement.exceptions.DataOperationFailedException;
@@ -14,19 +16,24 @@ import com.cts.incomestatement.models.TxnType;
 public class TxnServiceImpl implements TxnService {
 
 	private TxnDao txnDao;
+	private Logger logger;
 
 	public TxnServiceImpl() {
 		this.txnDao = new TxnDaoImpl();
+		this.logger = Logger.getLogger(this.getClass());
 	}
 
 	@Override
 	public List<Txn> getAll() throws DataOperationFailedException {
+		logger.info("getAll attempting");
 		return txnDao.findAll();
 	}
 
 	@Override
 	public Txn getById(long txnId) throws DataOperationFailedException, TxnNotFoundException {
+		logger.info("getById attempting");
 		if (!txnDao.existsById(txnId)) {
+			logger.error("Transaction with id " + txnId + " does not exists!");
 			throw new TxnNotFoundException("Transaction with id " + txnId + " does not exists!");
 		}
 		return txnDao.findById(txnId);
@@ -34,11 +41,13 @@ public class TxnServiceImpl implements TxnService {
 
 	@Override
 	public Txn add(Txn txn) throws DataOperationFailedException {
+		logger.debug(txn + " adding");
 		return txnDao.save(txn);
 	}
 
 	@Override
 	public Txn update(Txn txn) throws DataOperationFailedException, TxnNotFoundException {
+		logger.debug(txn + "updating");
 		if(!txnDao.existsById(txn.getTxnId())) {
 			throw new TxnNotFoundException("Transaction with id "+txn.getTxnId()+" does not exists!");
 		}
@@ -47,7 +56,9 @@ public class TxnServiceImpl implements TxnService {
 
 	@Override
 	public void deleteById(long txnId) throws DataOperationFailedException, TxnNotFoundException {
+		logger.debug(txnId + "deleting");
 		if(!txnDao.existsById(txnId)) {
+			logger.error("Transaction with id "+txnId+" does not exists!");
 			throw new TxnNotFoundException("Transaction with id "+txnId+" does not exists!");
 		}
 		txnDao.deleteById(txnId);
@@ -69,7 +80,9 @@ public class TxnServiceImpl implements TxnService {
 		double totalCredit=accumilate(txns, TxnType.CREDIT);
 		double totalDebit=accumilate(txns, TxnType.DEBIT);
 		double statementBalance=totalCredit-totalDebit;
-		return new Statement(start, end, txns, totalCredit, totalDebit, statementBalance);
+		Statement stmt = new Statement(start, end, txns, totalCredit, totalDebit, statementBalance);
+		logger.debug(stmt);
+		return stmt;
 	}
 
 }

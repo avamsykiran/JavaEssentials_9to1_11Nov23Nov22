@@ -1,0 +1,45 @@
+INFO	2022-11-16 10:51:41,101	0	root	[main]	App Initiated
+INFO	2022-11-16 10:51:46,477	5376	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-16 10:51:46,477	5376	com.cts.incomestatement.uis.StatementUI	[main]	ADD is the choice
+INFO	2022-11-16 10:51:46,477	5376	com.cts.incomestatement.uis.StatementUI	[main]	doAdd attempting
+DEBUG	2022-11-16 10:52:03,014	21913	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=0, header=Salary, amount=76000.0, type=CREDIT, txnDate=2020-11-01]
+DEBUG	2022-11-16 10:52:03,017	21916	com.cts.incomestatement.services.TxnServiceImpl	[main]	Txn [txnId=0, header=Salary, amount=76000.0, type=CREDIT, txnDate=2020-11-01] adding
+INFO	2022-11-16 10:52:03,019	21918	com.cts.incomestatement.daos.TxnDaoImpl	[main]	loading data
+DEBUG	2022-11-16 10:52:03,019	21918	com.cts.incomestatement.daos.TxnDaoImpl	[main]	./txns.data
+ERROR	2022-11-16 10:52:03,036	21935	com.cts.incomestatement.daos.TxnDaoImpl	[main]	java.io.FileNotFoundException: .\txns.data (The system cannot find the file specified)
+DEBUG	2022-11-16 10:52:03,036	21935	com.cts.incomestatement.daos.TxnDaoImpl	[main]	{}
+DEBUG	2022-11-16 10:52:03,036	21935	com.cts.incomestatement.daos.TxnDaoImpl	[main]	0
+DEBUG	2022-11-16 10:52:03,036	21935	com.cts.incomestatement.daos.TxnDaoImpl	[main]	after adding we have 1 transactions
+INFO	2022-11-16 10:52:03,036	21935	com.cts.incomestatement.daos.TxnDaoImpl	[main]	saving data
+INFO	2022-11-16 10:52:03,098	21997	com.cts.incomestatement.daos.TxnDaoImpl	[main]	data written
+DEBUG	2022-11-16 10:52:03,098	21997	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=1, header=Salary, amount=76000.0, type=CREDIT, txnDate=2020-11-01]
+INFO	2022-11-16 10:52:03,098	21997	com.cts.incomestatement.uis.StatementUI	[main]	txn added
+INFO	2022-11-16 10:52:06,952	25851	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-16 10:52:06,953	25852	com.cts.incomestatement.uis.StatementUI	[main]	ADD is the choice
+INFO	2022-11-16 10:52:06,953	25852	com.cts.incomestatement.uis.StatementUI	[main]	doAdd attempting
+DEBUG	2022-11-16 10:52:33,365	52264	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=0, header=Rent, amount=5500.0, type=DEBIT, txnDate=2020-11-02]
+DEBUG	2022-11-16 10:52:33,365	52264	com.cts.incomestatement.services.TxnServiceImpl	[main]	Txn [txnId=0, header=Rent, amount=5500.0, type=DEBIT, txnDate=2020-11-02] adding
+DEBUG	2022-11-16 10:52:33,366	52265	com.cts.incomestatement.daos.TxnDaoImpl	[main]	after adding we have 2 transactions
+INFO	2022-11-16 10:52:33,366	52265	com.cts.incomestatement.daos.TxnDaoImpl	[main]	saving data
+INFO	2022-11-16 10:52:33,368	52267	com.cts.incomestatement.daos.TxnDaoImpl	[main]	data written
+DEBUG	2022-11-16 10:52:33,368	52267	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=2, header=Rent, amount=5500.0, type=DEBIT, txnDate=2020-11-02]
+INFO	2022-11-16 10:52:33,368	52267	com.cts.incomestatement.uis.StatementUI	[main]	txn added
+INFO	2022-11-16 10:52:36,095	54994	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-16 10:52:36,095	54994	com.cts.incomestatement.uis.StatementUI	[main]	ADD is the choice
+INFO	2022-11-16 10:52:36,096	54995	com.cts.incomestatement.uis.StatementUI	[main]	doAdd attempting
+DEBUG	2022-11-16 10:52:49,965	68864	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=0, header=Fuel, amount=500.0, type=DEBIT, txnDate=2020-11-02]
+DEBUG	2022-11-16 10:52:49,966	68865	com.cts.incomestatement.services.TxnServiceImpl	[main]	Txn [txnId=0, header=Fuel, amount=500.0, type=DEBIT, txnDate=2020-11-02] adding
+DEBUG	2022-11-16 10:52:49,966	68865	com.cts.incomestatement.daos.TxnDaoImpl	[main]	after adding we have 3 transactions
+INFO	2022-11-16 10:52:49,966	68865	com.cts.incomestatement.daos.TxnDaoImpl	[main]	saving data
+INFO	2022-11-16 10:52:49,968	68867	com.cts.incomestatement.daos.TxnDaoImpl	[main]	data written
+DEBUG	2022-11-16 10:52:49,969	68868	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=3, header=Fuel, amount=500.0, type=DEBIT, txnDate=2020-11-02]
+INFO	2022-11-16 10:52:49,969	68868	com.cts.incomestatement.uis.StatementUI	[main]	txn added
+INFO	2022-11-16 10:52:58,569	77468	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-16 10:52:58,569	77468	com.cts.incomestatement.uis.StatementUI	[main]	STATEMENT is the choice
+INFO	2022-11-16 10:52:58,570	77469	com.cts.incomestatement.uis.StatementUI	[main]	Statement display being attempted
+DEBUG	2022-11-16 10:53:10,814	89713	com.cts.incomestatement.uis.StatementUI	[main]	2020-11-01,2020-11-11are start and end dates
+DEBUG	2022-11-16 10:53:10,836	89735	com.cts.incomestatement.services.TxnServiceImpl	[main]	com.cts.incomestatement.models.Statement@c2e1f26
+INFO	2022-11-16 10:53:10,837	89736	com.cts.incomestatement.uis.StatementUI	[main]	statement being displayed
+INFO	2022-11-16 10:53:25,925	104824	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-16 10:53:25,925	104824	com.cts.incomestatement.uis.StatementUI	[main]	QUIT is the choice
+INFO	2022-11-16 10:53:25,925	104824	root	[main]	App Terminated
