@@ -90,4 +90,83 @@ Log4j
         info(msg)
         debug(msg) ....etc
 
-    
+
+XML
+--------------------------------------------------------------------------
+
+    eXtended Markup Language
+
+    is used for tranporting semi-formated data across platforms.
+
+    emps.txt
+    empid,name,sal,doj
+    101,Vamsy,45600,2020-01-01
+    102,Suma,45600,2020-01-01
+    103,Komal,45600,2020-01-01
+    104,Naveen,45600,2020-01-01
+
+    emps.xml
+
+    <emps>
+        <emp empid="101">
+            <name>Vamsy</name>
+            <sal>45000</sal>
+            <doj>2020-01-01</doj>
+        </emp>
+        <emp empid="102">
+            <name>Suma</name>
+            <sal>45000</sal>
+            <doj>2020-01-01</doj>
+        </emp>
+        <emp empid="103">
+            <name>Koaml</name>
+            <sal>45000</sal>
+            <doj>2020-01-01</doj>
+        </emp>
+        <emp empid="104">
+            <name>Naveen</name>
+            <sal>45000</sal>
+            <doj>2020-01-01</doj>
+        </emp>
+    </emps>
+
+DOM4j
+--------------------------------------------------------------------------
+
+    <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>1.6.1</version>
+    </dependency>
+    <dependency>
+        <groupId>jaxen</groupId>
+        <artifactId>jaxen</artifactId>
+        <version>1.2.0</version>
+    </dependency>
+
+
+    Document − Represents the entire XML document. A Document object is often referred to as a DOM tree.
+    Element − Represents an XML element. Element object has methods to manipulate its child elements, text, attributes, and namespaces.
+    Attribute − Represents an attribute of an element. Attribute has method to get and set the value of attribute. It has parent and attribute type.
+    Node − Represents Element, Attribute, or ProcessingInstruction.
+
+    SAXReader.read(xmlSource)() − Build the DOM4J document from an XML source.
+    Document.getRootElement() − Get the root element of an XML document.
+    Element.node(index) − Get the XML node at a particular index in an element.
+    Element.attributes() − Get all the attributes of an element.
+    Node.valueOf(@Name) − Get the values of an attribute with the given name of an element.
+
+Apache POI
+------------------------------------------------------------------------
+
+    is an apache open source library to write Office documents like Excel workbooks, Word Documents or
+    PowerPoint preentations using java.
+
+    <dependency>  
+        <groupId>org.apache.poi</groupId>  
+        <artifactId>poi</artifactId>  
+        <version>3.9</version>  
+    </dependency>  
+
+
+

@@ -6,7 +6,9 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.cts.incomestatement.daos.TxnDao;
+import com.cts.incomestatement.daos.TxnDaoBinaryImpl;
 import com.cts.incomestatement.daos.TxnDaoImpl;
+import com.cts.incomestatement.daos.TxnDaoXMLImpl;
 import com.cts.incomestatement.exceptions.DataOperationFailedException;
 import com.cts.incomestatement.exceptions.TxnNotFoundException;
 import com.cts.incomestatement.models.Statement;
@@ -19,7 +21,8 @@ public class TxnServiceImpl implements TxnService {
 	private Logger logger;
 
 	public TxnServiceImpl() {
-		this.txnDao = new TxnDaoImpl();
+		//this.txnDao = new TxnDaoBinaryImpl();
+		this.txnDao = new TxnDaoXMLImpl();
 		this.logger = Logger.getLogger(this.getClass());
 	}
 

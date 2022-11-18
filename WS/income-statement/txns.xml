@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<txns>
+  <txn txnId="1">
+    <header>Salary</header>
+    <amount>67000.0</amount>
+    <type>CREDIT</type>
+    <txndate>2022-11-01</txndate>
+  </txn>
+  <txn txnId="2">
+    <header>Rent</header>
+    <amount>5500.0</amount>
+    <type>DEBIT</type>
+    <txndate>2022-11-02</txndate>
+  </txn>
+</txns>

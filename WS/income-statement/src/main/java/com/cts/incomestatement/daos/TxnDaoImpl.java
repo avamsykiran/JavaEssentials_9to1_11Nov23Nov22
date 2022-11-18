@@ -18,53 +18,19 @@ import org.apache.log4j.Logger;
 import com.cts.incomestatement.exceptions.DataOperationFailedException;
 import com.cts.incomestatement.models.Txn;
 
-public class TxnDaoImpl implements TxnDao {
+public abstract class TxnDaoImpl implements TxnDao {
 
-	public static final String DATA_FILE = "./txns.data";
-
-	private Map<Long, Txn> txns;
-	private long seed;
+	protected Map<Long, Txn> txns;
+	protected long seed;
 	private Logger logger;
 	
 	public TxnDaoImpl() {
 		this.logger = Logger.getLogger(this.getClass());
 	}
 	
-	private void loadData() throws DataOperationFailedException {
-		if (this.txns == null) {
-			logger.info("loading data");
-			logger.debug(DATA_FILE);
-			
-			try (ObjectInputStream oin = new ObjectInputStream(new FileInputStream(DATA_FILE))) {
-				this.txns = (Map<Long, Txn>) oin.readObject();
-				this.seed = this.txns.keySet().stream().reduce((k1, k2) -> k1 > k2 ? k1 : k2).orElse(0L);
-			} catch (FileNotFoundException e) {
-				logger.error(e);
-				this.txns = new TreeMap<>();
-				this.seed = 0;
-			} catch (IOException | ClassNotFoundException e) {
-				logger.fatal(e.getMessage(),e);
-				throw new DataOperationFailedException("Could not load data! Something went wrong!");
-			}
-			
-			logger.debug(txns);
-			logger.debug(seed);
-		}
-	}
-
-	private void saveData() throws DataOperationFailedException {
-		if (this.txns != null) {
-			logger.info("saving data");
-			try (ObjectOutputStream oout = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
-				oout.writeObject(this.txns);
-				logger.info("data written");
-			} catch (IOException e) {
-				logger.fatal(e.getMessage(),e);
-				throw new DataOperationFailedException("Could not save data! Something went wrong!");
-			}
-		}
-	}
-
+	protected abstract void loadData() throws DataOperationFailedException;
+	protected abstract void saveData() throws DataOperationFailedException;
+	
 	@Override
 	public List<Txn> findAll() throws DataOperationFailedException {
 		loadData();
