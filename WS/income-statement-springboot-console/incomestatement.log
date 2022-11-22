@@ -1,0 +1,53 @@
+INFO	2022-11-21 10:14:43,551	0	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 10:14:43,554	3	com.cts.incomestatement.uis.StatementUI	[main]	ADD is the choice
+INFO	2022-11-21 10:14:43,554	3	com.cts.incomestatement.uis.StatementUI	[main]	doAdd attempting
+DEBUG	2022-11-21 10:15:02,671	19120	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=0, header=Salary, amount=120000.0, type=CREDIT, txnDate=2022-11-01]
+DEBUG	2022-11-21 10:15:02,672	19121	com.cts.incomestatement.services.TxnServiceImpl	[main]	Txn [txnId=0, header=Salary, amount=120000.0, type=CREDIT, txnDate=2022-11-01] adding
+INFO	2022-11-21 10:15:02,672	19121	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	loading data
+DEBUG	2022-11-21 10:15:02,673	19122	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	./txns.xls
+FATAL	2022-11-21 10:15:02,674	19123	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	.\txns.xls (The system cannot find the file specified)
+java.io.FileNotFoundException: .\txns.xls (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.cts.incomestatement.daos.TxnDaoExcelImpl.loadData(TxnDaoExcelImpl.java:42)
+	at com.cts.incomestatement.daos.TxnDaoImpl.save(TxnDaoImpl.java:49)
+	at com.cts.incomestatement.services.TxnServiceImpl.add(TxnServiceImpl.java:54)
+	at com.cts.incomestatement.uis.StatementUI.doAdd(StatementUI.java:128)
+	at com.cts.incomestatement.uis.StatementUI.run(StatementUI.java:52)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.cts.incomestatement.IncomeStatementSpringbootConsoleApplication.main(IncomeStatementSpringbootConsoleApplication.java:11)
+DEBUG	2022-11-21 10:15:02,676	19125	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	{}
+DEBUG	2022-11-21 10:15:02,676	19125	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	0
+DEBUG	2022-11-21 10:15:02,676	19125	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	after adding we have 1 transactions
+INFO	2022-11-21 10:15:02,676	19125	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	saving data
+INFO	2022-11-21 10:15:02,869	19318	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	data written
+DEBUG	2022-11-21 10:15:02,869	19318	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=1, header=Salary, amount=120000.0, type=CREDIT, txnDate=2022-11-01]
+INFO	2022-11-21 10:15:02,869	19318	com.cts.incomestatement.uis.StatementUI	[main]	txn added
+INFO	2022-11-21 10:15:05,251	21700	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 10:15:05,251	21700	com.cts.incomestatement.uis.StatementUI	[main]	ADD is the choice
+INFO	2022-11-21 10:15:05,251	21700	com.cts.incomestatement.uis.StatementUI	[main]	doAdd attempting
+DEBUG	2022-11-21 10:15:28,045	44494	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=0, header=Rent, amount=9000.0, type=DEBIT, txnDate=2022-11-02]
+DEBUG	2022-11-21 10:15:28,045	44494	com.cts.incomestatement.services.TxnServiceImpl	[main]	Txn [txnId=0, header=Rent, amount=9000.0, type=DEBIT, txnDate=2022-11-02] adding
+DEBUG	2022-11-21 10:15:28,045	44494	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	after adding we have 2 transactions
+INFO	2022-11-21 10:15:28,045	44494	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	saving data
+INFO	2022-11-21 10:15:28,048	44497	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	data written
+DEBUG	2022-11-21 10:15:28,049	44498	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=2, header=Rent, amount=9000.0, type=DEBIT, txnDate=2022-11-02]
+INFO	2022-11-21 10:15:28,049	44498	com.cts.incomestatement.uis.StatementUI	[main]	txn added
+INFO	2022-11-21 10:15:31,499	47948	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 10:15:31,499	47948	com.cts.incomestatement.uis.StatementUI	[main]	ADD is the choice
+INFO	2022-11-21 10:15:31,499	47948	com.cts.incomestatement.uis.StatementUI	[main]	doAdd attempting
+DEBUG	2022-11-21 10:15:52,020	68469	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=0, header=Fuel, amount=550.0, type=DEBIT, txnDate=2022-11-03]
+DEBUG	2022-11-21 10:15:52,021	68470	com.cts.incomestatement.services.TxnServiceImpl	[main]	Txn [txnId=0, header=Fuel, amount=550.0, type=DEBIT, txnDate=2022-11-03] adding
+DEBUG	2022-11-21 10:15:52,021	68470	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	after adding we have 3 transactions
+INFO	2022-11-21 10:15:52,021	68470	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	saving data
+INFO	2022-11-21 10:15:52,027	68476	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	data written
+DEBUG	2022-11-21 10:15:52,028	68477	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=3, header=Fuel, amount=550.0, type=DEBIT, txnDate=2022-11-03]
+INFO	2022-11-21 10:15:52,028	68477	com.cts.incomestatement.uis.StatementUI	[main]	txn added
+INFO	2022-11-21 10:15:55,177	71626	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 10:15:55,177	71626	com.cts.incomestatement.uis.StatementUI	[main]	QUIT is the choice

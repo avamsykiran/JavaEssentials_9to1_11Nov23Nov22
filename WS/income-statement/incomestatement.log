@@ -158,3 +158,61 @@ INFO	2022-11-18 11:15:43,053	23480	com.cts.incomestatement.uis.StatementUI	[main
 INFO	2022-11-18 11:15:53,774	34201	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
 DEBUG	2022-11-18 11:15:53,775	34202	com.cts.incomestatement.uis.StatementUI	[main]	QUIT is the choice
 INFO	2022-11-18 11:15:53,775	34202	root	[main]	App Terminated
+INFO	2022-11-21 08:52:29,766	0	root	[main]	App Initiated
+INFO	2022-11-21 08:52:52,116	22350	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 08:52:52,117	22351	com.cts.incomestatement.uis.StatementUI	[main]	ADD is the choice
+INFO	2022-11-21 08:52:52,117	22351	com.cts.incomestatement.uis.StatementUI	[main]	doAdd attempting
+DEBUG	2022-11-21 08:53:19,620	49854	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=0, header=Salary, amount=87000.0, type=CREDIT, txnDate=2022-11-01]
+DEBUG	2022-11-21 08:53:19,624	49858	com.cts.incomestatement.services.TxnServiceImpl	[main]	Txn [txnId=0, header=Salary, amount=87000.0, type=CREDIT, txnDate=2022-11-01] adding
+INFO	2022-11-21 08:53:19,624	49858	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	loading data
+DEBUG	2022-11-21 08:53:19,624	49858	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	./txns.xls
+FATAL	2022-11-21 08:53:19,625	49859	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	.\txns.xls (The system cannot find the file specified)
+java.io.FileNotFoundException: .\txns.xls (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.cts.incomestatement.daos.TxnDaoExcelImpl.loadData(TxnDaoExcelImpl.java:42)
+	at com.cts.incomestatement.daos.TxnDaoImpl.save(TxnDaoImpl.java:49)
+	at com.cts.incomestatement.services.TxnServiceImpl.add(TxnServiceImpl.java:50)
+	at com.cts.incomestatement.uis.StatementUI.doAdd(StatementUI.java:121)
+	at com.cts.incomestatement.uis.StatementUI.run(StatementUI.java:45)
+	at com.cts.incomestatement.IncomeStatementApplication.main(IncomeStatementApplication.java:13)
+DEBUG	2022-11-21 08:53:19,637	49871	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	{}
+DEBUG	2022-11-21 08:53:19,638	49872	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	0
+DEBUG	2022-11-21 08:53:19,638	49872	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	after adding we have 1 transactions
+INFO	2022-11-21 08:53:19,638	49872	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	saving data
+INFO	2022-11-21 08:53:20,149	50383	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	data written
+DEBUG	2022-11-21 08:53:20,150	50384	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=1, header=Salary, amount=87000.0, type=CREDIT, txnDate=2022-11-01]
+INFO	2022-11-21 08:53:20,150	50384	com.cts.incomestatement.uis.StatementUI	[main]	txn added
+INFO	2022-11-21 08:53:23,073	53307	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 08:53:23,073	53307	com.cts.incomestatement.uis.StatementUI	[main]	ADD is the choice
+INFO	2022-11-21 08:53:23,073	53307	com.cts.incomestatement.uis.StatementUI	[main]	doAdd attempting
+DEBUG	2022-11-21 08:53:41,835	72069	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=0, header=Rent, amount=7000.0, type=DEBIT, txnDate=2022-11-02]
+DEBUG	2022-11-21 08:53:41,836	72070	com.cts.incomestatement.services.TxnServiceImpl	[main]	Txn [txnId=0, header=Rent, amount=7000.0, type=DEBIT, txnDate=2022-11-02] adding
+DEBUG	2022-11-21 08:53:41,836	72070	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	after adding we have 2 transactions
+INFO	2022-11-21 08:53:41,836	72070	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	saving data
+INFO	2022-11-21 08:53:41,840	72074	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	data written
+DEBUG	2022-11-21 08:53:41,840	72074	com.cts.incomestatement.uis.StatementUI	[main]	Txn [txnId=2, header=Rent, amount=7000.0, type=DEBIT, txnDate=2022-11-02]
+INFO	2022-11-21 08:53:41,841	72075	com.cts.incomestatement.uis.StatementUI	[main]	txn added
+INFO	2022-11-21 08:53:46,008	76242	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 08:53:46,008	76242	com.cts.incomestatement.uis.StatementUI	[main]	QUIT is the choice
+INFO	2022-11-21 08:53:46,008	76242	root	[main]	App Terminated
+INFO	2022-11-21 08:55:28,127	1	root	[main]	App Initiated
+INFO	2022-11-21 08:55:33,113	4987	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 08:55:33,114	4988	com.cts.incomestatement.uis.StatementUI	[main]	STATEMENT is the choice
+INFO	2022-11-21 08:55:33,114	4988	com.cts.incomestatement.uis.StatementUI	[main]	Statement display being attempted
+INFO	2022-11-21 08:55:46,831	0	root	[main]	App Initiated
+INFO	2022-11-21 08:55:50,433	3602	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 08:55:50,434	3603	com.cts.incomestatement.uis.StatementUI	[main]	STATEMENT is the choice
+INFO	2022-11-21 08:55:50,434	3603	com.cts.incomestatement.uis.StatementUI	[main]	Statement display being attempted
+DEBUG	2022-11-21 08:56:06,912	20081	com.cts.incomestatement.uis.StatementUI	[main]	2022-11-01,2022-11-05are start and end dates
+INFO	2022-11-21 08:56:06,913	20082	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	loading data
+DEBUG	2022-11-21 08:56:06,913	20082	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	./txns.xls
+DEBUG	2022-11-21 08:56:07,375	20544	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	{1=Txn [txnId=1, header=Salary, amount=87000.0, type=CREDIT, txnDate=2022-11-01], 2=Txn [txnId=2, header=Rent, amount=7000.0, type=DEBIT, txnDate=2022-11-02]}
+DEBUG	2022-11-21 08:56:07,378	20547	com.cts.incomestatement.daos.TxnDaoExcelImpl	[main]	2
+DEBUG	2022-11-21 08:56:07,397	20566	com.cts.incomestatement.services.TxnServiceImpl	[main]	com.cts.incomestatement.models.Statement@5bc79255
+INFO	2022-11-21 08:56:07,397	20566	com.cts.incomestatement.uis.StatementUI	[main]	statement being displayed
+INFO	2022-11-21 08:56:15,288	28457	com.cts.incomestatement.uis.StatementUI	[main]	Menu displayed and choice accepted
+DEBUG	2022-11-21 08:56:15,288	28457	com.cts.incomestatement.uis.StatementUI	[main]	QUIT is the choice
+INFO	2022-11-21 08:56:15,288	28457	root	[main]	App Terminated

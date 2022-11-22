@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import com.cts.incomestatement.daos.TxnDao;
 import com.cts.incomestatement.daos.TxnDaoBinaryImpl;
@@ -16,15 +19,16 @@ import com.cts.incomestatement.models.Statement;
 import com.cts.incomestatement.models.Txn;
 import com.cts.incomestatement.models.TxnType;
 
+@Service
 public class TxnServiceImpl implements TxnService {
 
+	@Autowired
+	@Qualifier("txnDaoExcelImpl")
 	private TxnDao txnDao;
+	
 	private Logger logger;
 
 	public TxnServiceImpl() {
-		//this.txnDao = new TxnDaoBinaryImpl();
-		//this.txnDao = new TxnDaoXMLImpl();
-		this.txnDao = new TxnDaoExcelImpl();
 		this.logger = Logger.getLogger(this.getClass());
 	}
 

@@ -3,56 +3,42 @@ package com.cts.incomestatement.services;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cts.incomestatement.daos.TxnDao;
-import com.cts.incomestatement.daos.TxnDaoBinaryImpl;
-import com.cts.incomestatement.daos.TxnDaoExcelImpl;
-import com.cts.incomestatement.daos.TxnDaoImpl;
-import com.cts.incomestatement.daos.TxnDaoXMLImpl;
+import com.cts.incomestatement.entities.Txn;
+import com.cts.incomestatement.entities.TxnType;
 import com.cts.incomestatement.exceptions.DataOperationFailedException;
 import com.cts.incomestatement.exceptions.TxnNotFoundException;
 import com.cts.incomestatement.models.Statement;
-import com.cts.incomestatement.models.Txn;
-import com.cts.incomestatement.models.TxnType;
 
+@Service
 public class TxnServiceImpl implements TxnService {
 
+	@Autowired
 	private TxnDao txnDao;
-	private Logger logger;
-
-	public TxnServiceImpl() {
-		//this.txnDao = new TxnDaoBinaryImpl();
-		//this.txnDao = new TxnDaoXMLImpl();
-		this.txnDao = new TxnDaoExcelImpl();
-		this.logger = Logger.getLogger(this.getClass());
-	}
-
+	
 	@Override
 	public List<Txn> getAll() throws DataOperationFailedException {
-		logger.info("getAll attempting");
 		return txnDao.findAll();
 	}
 
 	@Override
 	public Txn getById(long txnId) throws DataOperationFailedException, TxnNotFoundException {
-		logger.info("getById attempting");
 		if (!txnDao.existsById(txnId)) {
-			logger.error("Transaction with id " + txnId + " does not exists!");
 			throw new TxnNotFoundException("Transaction with id " + txnId + " does not exists!");
 		}
-		return txnDao.findById(txnId);
+		return txnDao.findById(txnId).orElse(null);
 	}
 
 	@Override
 	public Txn add(Txn txn) throws DataOperationFailedException {
-		logger.debug(txn + " adding");
 		return txnDao.save(txn);
 	}
 
 	@Override
 	public Txn update(Txn txn) throws DataOperationFailedException, TxnNotFoundException {
-		logger.debug(txn + "updating");
 		if(!txnDao.existsById(txn.getTxnId())) {
 			throw new TxnNotFoundException("Transaction with id "+txn.getTxnId()+" does not exists!");
 		}
@@ -61,9 +47,7 @@ public class TxnServiceImpl implements TxnService {
 
 	@Override
 	public void deleteById(long txnId) throws DataOperationFailedException, TxnNotFoundException {
-		logger.debug(txnId + "deleting");
 		if(!txnDao.existsById(txnId)) {
-			logger.error("Transaction with id "+txnId+" does not exists!");
 			throw new TxnNotFoundException("Transaction with id "+txnId+" does not exists!");
 		}
 		txnDao.deleteById(txnId);
@@ -86,7 +70,6 @@ public class TxnServiceImpl implements TxnService {
 		double totalDebit=accumilate(txns, TxnType.DEBIT);
 		double statementBalance=totalCredit-totalDebit;
 		Statement stmt = new Statement(start, end, txns, totalCredit, totalDebit, statementBalance);
-		logger.debug(stmt);
 		return stmt;
 	}
 

@@ -1,6 +1,5 @@
 package com.cts.incomestatement.daos;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,12 +13,13 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.dom4j.DocumentException;
+import org.springframework.stereotype.Repository;
 
 import com.cts.incomestatement.exceptions.DataOperationFailedException;
 import com.cts.incomestatement.models.Txn;
 import com.cts.incomestatement.models.TxnType;
 
+@Repository
 public class TxnDaoExcelImpl extends TxnDaoImpl {
 
 	public static final String DATA_FILE = "./txns.xls";
