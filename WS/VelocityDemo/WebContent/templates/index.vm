@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Income Statement</title>
+	</head>
+	<body>
+		<header>
+			<h3>Income Statement</h3>
+			<hr/>
+			<a href="addTxn">New Transaction</a>
+			<hr />
+		</header>
+		<div>
+			#if($txns.isEmpty())
+				<p><strong>No Transaction made yet</strong></p>
+			#end
+			#if($txns.size()>0)
+				<table>
+					<thead>
+						<tr>
+							<th>TxnId</th>
+							<th>TxnDate</th>
+							<th>Header</th>
+							<th>Type</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tbody>
+						#foreach($t in $txns)
+							<tr>
+								<td>$t.txnId</td>
+								<td>$t.txnDate</td>
+								<td>$t.header</td>
+								<td>$t.type</td>
+								<td>$t.amount</td>
+							</tr>
+						#end
+					</tbody>
+				</table>
+			#end
+		</div>
+	</body>
+</html>

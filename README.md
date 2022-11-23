@@ -5,12 +5,8 @@ Dom4j
 Apache POI 3.x
 taglibs 1.x
 Velocity 1.x,
-Axis 1.x
-Xerces 1.x, Beanshell
 Prometheus and Grafana
 Dynatrace and Splunk
-Open SAML 2.5.x 
-Santurio XML Sec 1.x
 Spring Batch Admin 1.x
 
 Lab Setup
@@ -168,3 +164,15 @@ Apache POI
         <version>3.9</version>  
     </dependency>  
 
+Velocity
+------------------------------------------------------------------
+<dependency>
+    <groupId>org.apache.velocity</groupId>
+    <artifactId>velocity</artifactId>
+    <version>1.7</version>
+</dependency>
+<dependency>
+     <groupId>org.apache.velocity</groupId>
+     <artifactId>velocity-tools</artifactId>
+     <version>2.0</version>
+</dependency>

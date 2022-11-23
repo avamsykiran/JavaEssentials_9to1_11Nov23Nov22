@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Income Statement</title>
+	</head>
+	<body>
+		<header>
+			<h3>New Transaction</h3>
+			<hr/>
+			<a href="">Home</a>
+			<hr />
+		</header>
+		<form method="POST">
+			<label>Header: <input type="text" name="header" /></label><br />
+			<label>Type: 
+				<select name="type">
+					<option value="CEDIT">Credit</option>
+					<option value="DEBIT">Debit</option>
+				</select>
+			</label><br />
+			<label>Date Of Transaction: <input type="date" name="txnDate" /></label><br />
+			<label>Amount: <input type="number" name="amount" /></label><br />
+			<button>ADD</button>
+		</form>
+	</body>
+</html>
