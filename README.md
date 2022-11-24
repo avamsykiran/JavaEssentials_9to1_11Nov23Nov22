@@ -7,7 +7,6 @@ taglibs 1.x
 Velocity 1.x,
 Prometheus and Grafana
 Dynatrace and Splunk
-Spring Batch Admin 1.x
 
 Lab Setup
 --------------------------------------
@@ -176,3 +175,72 @@ Velocity
      <artifactId>velocity-tools</artifactId>
      <version>2.0</version>
 </dependency>
+
+Product Performence
+        |
+    --------------------------------------
+    |                                   |
+    Application Code                    Infra
+     Data Strucutres
+     Alogirthms
+     Implementation
+
+            time complexity                 Networks
+            space complexity                Operating System
+
+        Prometheus and Grafana                 Dynatrace and Splunk
+
+        Prometheus      is performence monitoring server
+
+                Prometheus Client
+                Micrometrics
+                Parametrics 
+                Spring Boot Actuator ...etc
+
+                the data collected here is called time series data.
+
+        Grafan          is a data visualization tool for performence metrics.
+
+        Dynatrace       is a network and system monitoring tool.
+
+                        applied on a clusturs of VPNs .
+
+        Splunk          is a adjective tool for system performence metric monitoring.
+
+
+    Axis                is a SOAP WebService Server and Client.
+
+                            Simple Object Access Protocol Web Services.
+                            XML is media of communciation.
+
+    Open SAML           is a standard security protocol over xml for soap webservices.
+
+Spring Batch Admin
+
+    is a UI tool to manage the job created on spring batch.
+
+    org.springramewrk.com:org-springframework-starter-batch-admin-manager
+
+    assuming that the srver context is at 9000
+
+    http://localhost:9000/spring-batch-admin/
+
+        will trigger a dashboard.
+            feature
+                - creating a new job
+                - shceduling a job
+                - pausing a job
+                - starting a job ahead of its schedule time
+                - deleting a job.
+
+    is declared 'end-of-life' on the 11 month of 2017 year.
+
+    this proejct is being moved intoa new project 'spring-attic'
+
+    https://github.com/spring-attic/spring-batch-admin.git
+
+    git clone https://github.com/spring-attic/spring-batch-admin.git
+
+    using menu 'existing mavne project'  this into eclispe or sts and
+    'run as -> run on server'.
+
